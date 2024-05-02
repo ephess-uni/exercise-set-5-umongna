@@ -8,6 +8,14 @@ This module contains an entry point that:
 import numpy as np
 from argparse import ArgumentParser
 
+def processed_data(infile, outfile):
+    data = np.loadtxt(infile, delimiter = ',')
+    mean = np.mean(data, axis = 0)
+    z_mean = data - mean
+    std = np.std(data, axis =0)
+    processed = z_mean/std
+    np.savetxt(outfile, processed, delimiter =",")
+
 if __name__ == "__main__":
     # Create your argument parser object here.
     # Collect the filename arguments from the command line
@@ -16,4 +24,12 @@ if __name__ == "__main__":
     # Tests will run your command using a system call.
     # To test your program with arguments, run it from the command line
     # (see README.md for more details)
-    pass
+        
+    parser = ArgumentParser(description='This program applies a standard scale transform to the data in infile and writes it to outfile.')
+    parser.add_argument('infile', help = 'Provide the input file')
+    parser.add_argument('outfile', help = 'Provide the output file')
+    args = parser.parse_args()
+    processed_data(args.infile,args.outfile)
+    print(f"processed data saved to {args.outfile}")
+    
+    
