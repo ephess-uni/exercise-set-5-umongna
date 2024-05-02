@@ -7,7 +7,8 @@ except ImportError:
 
 def main(infile):
     """Call line_count with the infile argument."""
-    line_count(infile)
+    x= line_count(infile)
+    print(f"The file '{infile}' has {x} lines")
 
 
 if __name__ == "__main__":
