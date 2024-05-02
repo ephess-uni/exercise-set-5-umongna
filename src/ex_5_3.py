@@ -25,7 +25,7 @@ if __name__ == "__main__":
     # To test your program with arguments, run it from the command line
     # (see README.md for more details)
         
-    parser = argparse.ArgumentParser(description='This program applies a standard scale transform to the data in infile and writes it to outfile.')
+    parser = ArgumentParser(description='This program applies a standard scale transform to the data in infile and writes it to outfile.')
     parser.add_argument('infile', help = 'Provide the input file')
     parser.add_argument('outfile', help = 'Provide the output file')
     args = parser.parse_args()
