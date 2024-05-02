@@ -29,7 +29,7 @@ if __name__ == "__main__":
     parser.add_argument('infile', help = 'Provide the input file')
     parser.add_argument('outfile', help = 'Provide the output file')
     args = parser.parse_args()
-    p_data(args.infile,args.outfile)
+    processed_data(args.infile,args.outfile)
     print(f"processed data saved to {args.outfile}")
     
     
