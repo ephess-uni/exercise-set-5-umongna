@@ -23,8 +23,9 @@ if __name__ == "__main__":
         
     # Complete the data processing steps using numpy here.
     data = np.loadtxt(INFILE, delimiter = ',')
-    mean = np.std(data, axis = 0)
+    mean = np.mean(data, axis = 0)
     z_mean = data - mean
+    std = np.std(data, axis =0)
     processed = z_mean/std     
 
     # Save the output to OUTFILE using numpy routines.
