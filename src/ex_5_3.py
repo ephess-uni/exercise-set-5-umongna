@@ -9,12 +9,12 @@ import numpy as np
 from argparse import ArgumentParser
 
 def processed_data(infile, outfile):
-    data = np.loadtxt(INFILE, delimiter = ',')
+    data = np.loadtxt(infile, delimiter = ',')
     mean = np.mean(data, axis = 0)
     z_mean = data - mean
     std = np.std(data, axis =0)
     processed = z_mean/std
-    np.savetxt(OUTFILE, processed, delimiter =",")
+    np.savetxt(outfile, processed, delimiter =",")
 
 if __name__ == "__main__":
     # Create your argument parser object here.
